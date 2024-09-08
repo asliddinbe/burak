@@ -1,3 +1,22 @@
+// // H2-Task
+
+function getNum(getStr: String): String {
+  const numArr: number[] = [];
+  getStr.split("").forEach((ele) => {
+    if (!isNaN(Number(ele))) {
+      numArr.push(Number(ele));
+    }
+  });
+  return numArr.join("");
+}
+
+console.log(getNum("norther1336npolar"));
+
+
+
+
+
+
 //Task-G method 
 // function getHighestIndex(arr) {
 //     let maxValue = arr[0];
