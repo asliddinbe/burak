@@ -1,22 +1,61 @@
-// I-Task
-function findNumber(getNumbers: number[]) {
-  interface ReduceNum {
-    [key: number]: number;
-  }
-  const reduceNum = getNumbers.reduce(
-    (reduceObject: ReduceNum, numbers: number) => {
-      reduceObject[numbers] = (reduceObject[numbers] || 0) + 1;
-      return reduceObject;
-    },
-    {}
-  );
+//task-J
 
-  const result = Object.keys(reduceNum).reduce((a, b) => {
-    return reduceNum[Number(a)] > reduceNum[Number(b)] ? a : b;
+function findWord(getWord: string) {
+  const words = getWord.split(" ");
+  let no = "";
+  words.forEach((ele) => {
+    if (ele.length > no.length) {
+      no = ele;
+    }
   });
-  return result;
+  return no;
 }
-console.log(findNumber([5, 3, 5, 5, 5]));
+const word = "I wanna go to Burkina-Sila!";
+console.log(findWord(word));
+/* Project standarts:
+
+- Logging standarst(Morgan format va //controllerni har bitta methodini log qilyapmiz)
+- Naming standarts
+    function nomlari, method, variables - Camel case(goHome, getLogin, getSignup)
+    class => Pascal (MemberService)
+    folder, file => Kebab
+    css => Snake case (button_style)
+- ERROR handling
+*/
+
+
+
+/**
+front end ni 2 xil developmenti bor:
+
+ -Traditional Front end => SSR(Adminka) => EJS
+ -modern FD             => SPA(User's application) => REACT library
+ 
+*/
+
+
+
+
+
+// // I-Task
+// function findNumber(getNumbers: number[]) {
+//   interface ReduceNum {
+//     [key: number]: number;
+//   }
+//   const reduceNum = getNumbers.reduce(
+//     (reduceObject: ReduceNum, numbers: number) => {
+//       reduceObject[numbers] = (reduceObject[numbers] || 0) + 1;
+//       return reduceObject;
+//     },
+//     {}
+//   );
+
+//   const result = Object.keys(reduceNum).reduce((a, b) => {
+//     return reduceNum[Number(a)] > reduceNum[Number(b)] ? a : b;
+//   });
+//   return result;
+// }
+// console.log(findNumber([5, 3, 5, 5, 5]));
 
 
 
