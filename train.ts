@@ -1,3 +1,31 @@
+// I-Task
+function findNumber(getNumbers: number[]) {
+  interface ReduceNum {
+    [key: number]: number;
+  }
+  const reduceNum = getNumbers.reduce(
+    (reduceObject: ReduceNum, numbers: number) => {
+      reduceObject[numbers] = (reduceObject[numbers] || 0) + 1;
+      return reduceObject;
+    },
+    {}
+  );
+
+  const result = Object.keys(reduceNum).reduce((a, b) => {
+    return reduceNum[Number(a)] > reduceNum[Number(b)] ? a : b;
+  });
+  return result;
+}
+console.log(findNumber([5, 3, 5, 5, 5]));
+
+
+
+
+
+
+
+
+
 /* Project Standards:
 - Logging standards:
 - Naming standards:
@@ -16,23 +44,28 @@
  ...
  */
 
+ /*
+   Traditional FD => BSSR => EJS
+   Modern FD => SPA => REACT
+  */
+
 
 
 
 
 // // H2-Task
 
-function getNum(getStr: String): String {
-  const numArr: number[] = [];
-  getStr.split("").forEach((ele) => {
-    if (!isNaN(Number(ele))) {
-      numArr.push(Number(ele));
-    }
-  });
-  return numArr.join("");
-}
+// function getNum(getStr: String): String {
+//   const numArr: number[] = [];
+//   getStr.split("").forEach((ele) => {
+//     if (!isNaN(Number(ele))) {
+//       numArr.push(Number(ele));
+//     }
+//   });
+//   return numArr.join("");
+// }
 
-console.log(getNum("norther1336npolar"));
+// console.log(getNum("norther1336npolar"));
 
 
 
