@@ -1,17 +1,39 @@
+ //K-Task
+ 
+ function unliFind(words: string): number {
+  const getWord: string[] = words.split("");
+  let count: number = 0;
+  for (let i = 0; i < getWord.length; i++) {
+    if (
+      getWord[i] === "i" ||
+      getWord[i] === "a" ||
+      getWord[i] === "u" ||
+      getWord[i] === "o" ||
+      getWord[i] === "e" ||
+      getWord[i] === "o'"
+    ) {
+      count++;
+    }
+    count;
+  }
+  return count;
+}
+console.log(unliFind("string"));
+
 //task-J
 
-function findWord(getWord: string) {
-  const words = getWord.split(" ");
-  let no = "";
-  words.forEach((ele) => {
-    if (ele.length > no.length) {
-      no = ele;
-    }
-  });
-  return no;
-}
-const word = "I wanna go to Burkina-Sila!";
-console.log(findWord(word));
+// function findWord(getWord: string) {
+//   const words = getWord.split(" ");
+//   let no = "";
+//   words.forEach((ele) => {
+//     if (ele.length > no.length) {
+//       no = ele;
+//     }
+//   });
+//   return no;
+// }
+// const word = "I wanna go to Burkina-Sila!";
+// console.log(findWord(word));
 /* Project standarts:
 
 - Logging standarst(Morgan format va //controllerni har bitta methodini log qilyapmiz)
