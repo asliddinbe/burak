@@ -79,6 +79,20 @@ restaurantController.processLogin = async (
    }
 };
 
+restaurantController.logout = async (
+   req: AdminRequest, 
+   res: Response) => {
+   try {
+     console.log("logout");
+      req.session.destroy(function () {
+       res.redirect("/admin");     
+      });
+   } catch (err) {
+      console.log("Error, logout:", err);
+      res.send(err);
+   }
+};
+
 restaurantController.checkAuthSession = async (
    req: AdminRequest, 
    res: Response) => {
