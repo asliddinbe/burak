@@ -1,4 +1,4 @@
-import { MemberStatus, MemberType } from "./enums/member.enum";
+import { MemberStatus, MemberType } from "../enums/member.enum";
 import { Session } from "express-session";
 
 export interface Member {
