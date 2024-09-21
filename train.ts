@@ -1,24 +1,35 @@
- //K-Task
+//TASK - L
+function polarbear (getString: string) {
+  const kodiakbear: string[] = getString.split(" ");
+  const brownbear = kodiakbear.map((ele) => {
+   const b = ele.split("").reverse();
+   return b.join("");
+  })
+  return brownbear.join(" ");
+ }
+ console.log(polarbear("we dislike coding"))
+
+//  //K-Task
  
- function unliFind(words: string): number {
-  const getWord: string[] = words.split("");
-  let count: number = 0;
-  for (let i = 0; i < getWord.length; i++) {
-    if (
-      getWord[i] === "i" ||
-      getWord[i] === "a" ||
-      getWord[i] === "u" ||
-      getWord[i] === "o" ||
-      getWord[i] === "e" ||
-      getWord[i] === "o'"
-    ) {
-      count++;
-    }
-    count;
-  }
-  return count;
-}
-console.log(unliFind("string"));
+//  function unliFind(words: string): number {
+//   const getWord: string[] = words.split("");
+//   let count: number = 0;
+//   for (let i = 0; i < getWord.length; i++) {
+//     if (
+//       getWord[i] === "i" ||
+//       getWord[i] === "a" ||
+//       getWord[i] === "u" ||
+//       getWord[i] === "o" ||
+//       getWord[i] === "e" ||
+//       getWord[i] === "o'"
+//     ) {
+//       count++;
+//     }
+//     count;
+//   }
+//   return count;
+// }
+// console.log(unliFind("string"));
 
 //task-J
 
