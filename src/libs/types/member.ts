@@ -33,6 +33,7 @@ export interface LoginInput {
 }
 
 export interface AdminRequest {
+    [x: string]: any;
     body: MemberInput;
     member: Member;
     session: Session & { member: Member };
