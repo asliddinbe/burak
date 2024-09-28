@@ -1,10 +1,13 @@
 import MemberModel from "../schema/Member.model";
 import { LoginInput, Member, MemberInput } from "../libs/types/member";
-import Errors, { HttpCode, Message } from "../libs/types/Errors";
+import Errors, { HttpCode, Message } from "../libs/Errors";
 import { MemberType } from "../libs/enums/member.enum";
 import * as bcrypt from "bcryptjs";
 
 class MemberService {
+   static getUsers() {
+      throw new Error("Method not implemented.");
+   }
     private readonly memberModel;
 
     constructor () {
@@ -92,6 +95,17 @@ class MemberService {
       return await this.memberModel.findById(member._id).exec();
       
 }
+
+
+public async getUsers(): Promise<Member[]> {
+  const result = await this.memberModel
+  .find({memberType: MemberType.USER})
+  .exec();
+  if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
+  return result;
+   
+  }
 }
 
 export default MemberService;

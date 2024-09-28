@@ -3,7 +3,7 @@ import { T } from "../libs/types/common";
 import MemberService from "../models/Member.service";
 import { AdminRequest, LoginInput, MemberInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enum";
-import Errors, {HttpCode, Message } from "../libs/types/Errors";
+import Errors, {HttpCode, Message } from "../libs/Errors";
 
 const restaurantController: T = {};
 restaurantController.goHome = (req: Request, res: Response) => {
@@ -101,6 +101,26 @@ restaurantController.logout = async (
    } catch (err) {
       console.log("Error, logout:", err);
       res.send(err);
+   }
+};
+
+restaurantController.getUsers = async (req: Request, res: Response) => {
+   try {
+     console.log("getUsers");
+     const result = await MemberService.getUsers(); 
+     
+     res.render("users", { users: result });
+   } catch (err) {
+      console.log("Error, getUsers:", err);
+      res.redirect("/admin/login");
+   }
+};
+
+restaurantController.updateChosenUser = (req: Request, res: Response) => {
+   try {
+     console.log("updateChosenUser");
+   } catch (err) {
+      console.log("Error, updateChosenUser:", err);
    }
 };
 
