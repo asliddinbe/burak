@@ -1,10 +1,14 @@
 import MemberModel from "../schema/Member.model";
-import { LoginInput, Member, MemberInput } from "../libs/types/member";
+import { LoginInput, Member, MemberInput, MemberUpdateInput } from "../libs/types/member";
 import Errors, { HttpCode, Message } from "../libs/Errors";
 import { MemberType } from "../libs/enums/member.enum";
 import * as bcrypt from "bcryptjs";
+import { shapeIntoMongooseId } from "../libs/config";
 
 class MemberService {
+   static updataChosenUser(body: any) {
+      throw new Error("Method not implemented.");
+   }
    static getUsers() {
       throw new Error("Method not implemented.");
    }
@@ -106,6 +110,17 @@ public async getUsers(): Promise<Member[]> {
   return result;
    
   }
+
+  public async updateChosenUsers(input: MemberUpdateInput): Promise<Member> {
+    input._id = shapeIntoMongooseId(input._id);
+    const result = await this.memberModel
+    .findByIdAndUpdate({_id: input._id}, input, { new: true})
+    .exec();
+    if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
+  
+    return result;
+     
+    }
 }
 
 export default MemberService;
