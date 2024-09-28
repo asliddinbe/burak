@@ -3,7 +3,7 @@ import { T } from "../libs/types/common";
 import MemberService from "../models/Member.service";
 import { AdminRequest, LoginInput, MemberInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enum";
-import Errors, { Message } from "../libs/Errors";
+import Errors, {HttpCode, Message } from "../libs/types/Errors";
 
 const restaurantController: T = {};
 restaurantController.goHome = (req: Request, res: Response) => {
@@ -42,9 +42,11 @@ restaurantController.processSignup = async (
    try {
      console.log("processSignup");
      const file = req.file;
+     if(!file)
+       throw new Errors(HttpCode.BAD_REQUEST,Message.SOMETHING_WENT_WRONG);
     
      const newMember: MemberInput = req.body;
-     newMember.memberImage = file?.path;
+     newMember.memberImage = file?.path.replace(/\\/g,"/");
      newMember.memberType = MemberType.RESTAURANT;
      const memberService = new MemberService();
      const result = await memberService.processSignup( newMember );

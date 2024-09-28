@@ -1,5 +1,9 @@
 import { MemberStatus, MemberType } from "../enums/member.enum";
 import { Session } from "express-session";
+import { ObjectId } from "mongoose";
+import { Request } from "express";
+
+
 
 export interface Member {
     memberType: MemberType;
@@ -32,9 +36,9 @@ export interface LoginInput {
     memberPassword: string;
 }
 
-export interface AdminRequest {
-    [x: string]: any;
-    body: MemberInput;
-    member: Member;
+export interface AdminRequest  extends Request {
+    member: Member,
     session: Session & { member: Member };
+    file: Express.Multer.File;
+    files: Express.Multer.File[];
 }
