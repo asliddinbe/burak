@@ -1,13 +1,35 @@
-//TASK - L
-function polarbear (getString: string) {
-  const kodiakbear: string[] = getString.split(" ");
-  const brownbear = kodiakbear.map((ele) => {
-   const b = ele.split("").reverse();
-   return b.join("");
-  })
-  return brownbear.join(" ");
- }
- console.log(polarbear("we dislike coding"))
+// M-Task
+
+function getSquareNumbers(getNumbers: number[]) {
+  interface obj {
+    [key: string]: number;
+  }
+
+  const result: any = [];
+  const mapR = getNumbers.map((ele) => {
+    const Obj: obj = {};
+    let scuar: number = ele * ele;
+    let num: number = ele;
+    let scu: number = scuar;
+    Obj.number = num;
+    Obj.scuare = scu;
+    return result.push(Obj);
+  });
+  return result;
+}
+console.log(getSquareNumbers([1, 2, 3,]));
+
+
+// //TASK - L
+// function polarbear (getString: string) {
+//   const kodiakbear: string[] = getString.split(" ");
+//   const brownbear = kodiakbear.map((ele) => {
+//    const b = ele.split("").reverse();
+//    return b.join("");
+//   })
+//   return brownbear.join(" ");
+//  }
+//  console.log(polarbear("we dislike coding"))
 
 //  //K-Task
  
