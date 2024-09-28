@@ -1,23 +1,33 @@
+  // // N - TASK
+  function polli(tr: string): boolean {
+    const arbuz: string = tr.split("").reverse().join("");
+    if (arbuz !== tr) {
+      return false;
+    }
+    return true;
+  }
+  console.log(polli("rotator"));
+
 // M-Task
 
-function getSquareNumbers(getNumbers: number[]) {
-  interface obj {
-    [key: string]: number;
-  }
+// function getSquareNumbers(getNumbers: number[]) {
+//   interface obj {
+//     [key: string]: number;
+//   }
 
-  const result: any = [];
-  const mapR = getNumbers.map((ele) => {
-    const Obj: obj = {};
-    let scuar: number = ele * ele;
-    let num: number = ele;
-    let scu: number = scuar;
-    Obj.number = num;
-    Obj.scuare = scu;
-    return result.push(Obj);
-  });
-  return result;
-}
-console.log(getSquareNumbers([1, 2, 3,]));
+//   const result: any = [];
+//   const mapR = getNumbers.map((ele) => {
+//     const Obj: obj = {};
+//     let scuar: number = ele * ele;
+//     let num: number = ele;
+//     let scu: number = scuar;
+//     Obj.number = num;
+//     Obj.scuare = scu;
+//     return result.push(Obj);
+//   });
+//   return result;
+// }
+// console.log(getSquareNumbers([1, 2, 3,]));
 
 
 // //TASK - L
