@@ -1,4 +1,5 @@
   // // N - TASK
+  
   function polli(tr: string): boolean {
     const arbuz: string = tr.split("").reverse().join("");
     if (arbuz !== tr) {
@@ -7,6 +8,7 @@
     return true;
   }
   console.log(polli("rotator"));
+  
 
 // M-Task
 
