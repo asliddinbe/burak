@@ -6,14 +6,9 @@ import * as bcrypt from "bcryptjs";
 import { shapeIntoMongooseId } from "../libs/config";
 
 class MemberService {
-   static updataChosenUser(body: any) {
-      throw new Error("Method not implemented.");
-   }
-   static getUsers() {
-      throw new Error("Method not implemented.");
-   }
-    private readonly memberModel;
-
+   
+  private readonly memberModel;
+  
     constructor () {
         this.memberModel = MemberModel;
     }
@@ -103,24 +98,25 @@ class MemberService {
 
 public async getUsers(): Promise<Member[]> {
   const result = await this.memberModel
-  .find({memberType: MemberType.USER})
-  .exec();
+    .find({ memberType: MemberType.USER })
+    .exec();
+
   if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
 
   return result;
-   
-  }
+}
 
-  public async updateChosenUsers(input: MemberUpdateInput): Promise<Member> {
-    input._id = shapeIntoMongooseId(input._id);
-    const result = await this.memberModel
-    .findByIdAndUpdate({_id: input._id}, input, { new: true})
+
+public async updateChosenUser(input: MemberUpdateInput): Promise<Member[]> {
+  input._id = shapeIntoMongooseId(input._id);
+  const result = await this.memberModel
+    .findByIdAndUpdate({_id: input._id}, input, {new: true})
     .exec();
-    if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
-  
-    return result;
-     
-    }
+
+  if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
+
+  return result;
+}
 }
 
 export default MemberService;
