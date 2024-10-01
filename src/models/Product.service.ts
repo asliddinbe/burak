@@ -23,7 +23,7 @@ class ProductService {
        }
 
 
-    public async createNewProduct ( input: ProductInput): Promise<Product>{
+    public async createNewProduct ( input: ProductInput): Promise<Product> {
      try {
         return await this.productModel.create(input);
      } catch (err) {

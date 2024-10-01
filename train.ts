@@ -1,13 +1,26 @@
-  // // N - TASK
-  
-  function polli(tr: string): boolean {
-    const arbuz: string = tr.split("").reverse().join("");
-    if (arbuz !== tr) {
-      return false;
+  // TASK O 
+function calculateSumOfNumbers(array: any[]):number {
+  return array.reduce((sum: number, i: any) => {
+    if (typeof i === 'number') {
+      return sum + i
     }
-    return true;
-  }
-  console.log(polli("rotator"));
+    return sum
+  }, 0);
+}
+
+
+// console.log(calculateSumOfNumbers([11, "10", {son: 10}, true, 35]));
+  
+  // // // N - TASK
+  
+  // function polli(tr: string): boolean {
+  //   const arbuz: string = tr.split("").reverse().join("");
+  //   if (arbuz !== tr) {
+  //     return false;
+  //   }
+  //   return true;
+  // }
+  // console.log(polli("rotator"));
   
 
 // M-Task
