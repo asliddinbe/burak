@@ -1,12 +1,29 @@
-  // TASK O 
-function calculateSumOfNumbers(array: any[]):number {
-  return array.reduce((sum: number, i: any) => {
-    if (typeof i === 'number') {
-      return sum + i
-    }
-    return sum
-  }, 0);
+// TASK P 
+function objectToArray(obj: Record<string, any>): [string, any][] {
+  return Object.entries(obj);
 }
+
+console.log(objectToArray({a: 10, b: 20}));
+
+// // TASK O 
+// function calculateSumOfNumbers(array: any[]):number {
+//   return array.reduce((sum: number, i: any) => {
+//     if (typeof i === 'number') {
+//       return sum + i
+//     }
+//     return sum
+//   }, 0);
+// }
+
+//   // TASK O 
+// function calculateSumOfNumbers(array: any[]):number {
+//   return array.reduce((sum: number, i: any) => {
+//     if (typeof i === 'number') {
+//       return sum + i
+//     }
+//     return sum
+//   }, 0);
+// }
 
 
 // console.log(calculateSumOfNumbers([11, "10", {son: 10}, true, 35]));
